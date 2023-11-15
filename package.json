@@ -1,0 +1,25 @@
+{
+  "name": "video_chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/test.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/Ivan77web/video_chat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ivan77web/video_chat/issues"
+  },
+  "homepage": "https://github.com/Ivan77web/video_chat#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^5.5.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
