@@ -1,7 +1,6 @@
 import { Link, Route, Routes } from "react-router-dom"
-import { Counter } from "./components/Counter"
-import { MainPage } from "./pages/MainPage"
-import { AboutPage } from "./pages/AboutPage"
+import { MainPage } from "../pages/MainPage"
+import { AboutPage } from "../pages/AboutPage"
 import { Suspense } from "react"
 
 export const App = () => {
