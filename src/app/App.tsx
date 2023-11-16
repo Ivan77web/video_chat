@@ -2,6 +2,7 @@ import { Link, Route, Routes } from "react-router-dom"
 import { MainPage } from "../pages/MainPage"
 import { AboutPage } from "../pages/AboutPage"
 import { Suspense } from "react"
+import { AppRouter } from "./providers/router"
 
 export const App = () => {
     return (
@@ -9,12 +10,7 @@ export const App = () => {
             <Link to={'about'}>About</Link>
             <Link to={''}>Main</Link>
 
-            <Suspense fallback={<p>Loading</p>}>
-                <Routes>
-                    <Route path="/about" element={<AboutPage />} />
-                    <Route path="/" element={<MainPage />} />
-                </Routes>
-            </Suspense>
+            <AppRouter />
         </div>
     )
 }
