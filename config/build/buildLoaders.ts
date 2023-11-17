@@ -5,6 +5,35 @@ import { BuildOptions } from './types/config';
 export const buildLoaders = (buildOptions: BuildOptions): webpack.RuleSetRule[] => {
     const { paths, mode, isDev } = buildOptions;
 
+    const svgLoader = {
+        test: /\.svg$/,
+        use: [{
+            loader: '@svgr/webpack',
+            options: {
+                icon: true,
+                svgoConfig: {
+                    plugins: [
+                        {
+                            name: 'convertColors',
+                            params: {
+                                currentColor: true,
+                            },
+                        },
+                    ],
+                },
+            },
+        }],
+    };
+
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+            },
+        ],
+    };
+
     const styleLoader = {
         test: /\.s[ac]ss$/i,
         use: [
@@ -29,6 +58,8 @@ export const buildLoaders = (buildOptions: BuildOptions): webpack.RuleSetRule[] 
     };
 
     return [
+        fileLoader,
+        svgLoader,
         typescriptLoader,
         styleLoader
     ]
